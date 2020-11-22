@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+        .gas-frame {
+            border: none;
+            border-width: 0;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        
+        iframe {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+		<select id="MySelectMenu">
+			<option value="guide">guide</option>
+			<option value="user">user</option>
+			<option value="weekly">weekly</option>
+			<option value="youtube">youtube</option>
+			<!--<option value="advanced">advanced</option>-->
+		</select>
+		<input type="password" value="" placeholder="Search - number.." id="myInput">
+		<!--type="text"-->
+		<button onclick="myFunction()">Find</button>    --- Using this website is at the sole responsibility of the user . השימוש באתר באחריות המשתמש בלבד ---
+		<!--<p><a href="https://www.fb.com/stockvalueprice" target="iframe_a">fb.com/StockValuePrice</a></p>-->
+		<iframe class="gas-frame" id="MyFrame" style="width:100%; height:97%; border:none; overflow:hidden;" src="https://drive.google.com/uc?export=view&id=1Z0s5a2gwgiHtXx-YaRK3oQVKxbLPHD1c"><!--name="iframe_a"--></iframe>
+		<!--<i<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FStockValuePrice%2F&tabs=timeline%2Cevents%2Cmessages&width=500px&height=600px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" frameborder="0" width=100% height=100%></iframe>-->
+	</body>
+	<script>
+		function myFunction() 
+        {
+  			var e = document.getElementById("myInput");
+  			e.select();
+            var newSrc = myUrl(e.value);
+            document.getElementById("MyFrame").src=newSrc;
+			 
+		}
+        function myUrl(v) 
+        {
+  			var url = atob("aHR0cHM6Ly90aW55dXJsLmNvbS9zdnA=");
+			var selected = MySelect();
+			switch(selected) {
+				case "guide":
+				url+=selected;
+				break;
+				case "user":
+				url+=(MyInputCheck(selected,v,5));
+				break;
+				case "weekly":
+				url+=(MyInputCheck(selected,v,1));
+				break;
+				case "youtube":
+				url="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1";
+				break;
+				default:
+				url+="oops404";
+				break;
+			}
+			return url;	
+		}
+		function MySelect() {
+		var e = document.getElementById("MySelectMenu");
+		var selected = e.options[e.selectedIndex].value;
+		return selected;
+		}
+		function MyInputCheck(selected,v,max) {
+		if (v>=1 & v<=max & v.slice(v.length-1,v.length)!=".")
+			return selected+v;
+		else
+			return "oops404";
+		}
+	 
+	</script>
+</html>
