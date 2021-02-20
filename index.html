@@ -6,6 +6,7 @@
 <head>
 <title>Stock Value Price | מחיר ערך מניה</title>
 <style>
+
 body {
   background-color: rgb(120, 120, 120); /* For browsers that do not support gradients */
   background-image: linear-gradient(/*to bottom right, */rgb(80, 80, 80), rgb(120, 120, 120));
@@ -29,9 +30,49 @@ a.a:hover, a.a:active {
   transition-duration: 0.2s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.callout {
+  position: fixed;
+  bottom: 35px;
+  left: 20px;
+  margin-left: 20px;
+  max-width: 300px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.callout-header {
+  padding: 25px 25px;
+  background: #555;
+  text-align: right;
+  font-size: 30px;
+  color: white;
+}
+
+.callout-container {
+  text-align: right;
+  padding: 15px;
+  background-color: #ccc;
+  color: black
+}
+
+.closebtn {
+  padding: 5px 5px;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  background-color: rgb(150, 150, 150);
+  color: white;
+  transition-duration: 0.2s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 </style>
 </head>
-<body>
+	<body>
 		<h2 style="text-align:center; color:white; font-family:Arial, Helvetica, sans-serif"><div style="color:white; text-align: left; font-size: 14px; "><a>2021 © copyrights | כל הזכויות שמורות</a></div><a>STOCK VALUE PRICE | מחיר ערך מניה </a><a href="https://accounts.google.com/signin/v2/identifier?hl=iw&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAAQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="iframe_b"><img align="right" alt="google" src="https://user-images.githubusercontent.com/72992546/100374435-f43c3e00-3014-11eb-85f3-f4f73263ef9f.PNG"></a>
 		</h2>
         
@@ -68,7 +109,14 @@ a.a:hover, a.a:active {
         <p> 
 		<iframe id="MyFrame" style="position: absolute; left: 0%; width:75%; height:85%; border:none; overflow:auto;background-image: url('https://user-images.githubusercontent.com/72992546/100374681-5006c700-3015-11eb-99e0-ce36cfa12d1a.PNG')" src="https://docs.google.com/document/d/1xv_lbSzLQdQyCFvJzX9D0b_Pj6NSlbb-C1B6GBqadio/edit?rm=minimal" name="iframe_a"></iframe>
 		<iframe style="position: absolute; left: 75%; height:85%; border:none; overflow:auto;"src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FStockValuePrice%2F&tabs=timeline%2Cevents%2Cmessages&width=300px&height=635px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"></iframe>
-		</p>	
+		</p>
+		<div class="callout">
+			<div class="callout-header">תנאי השימוש</div>
+				<span class="closebtn" onclick="this.parentElement.style.display='none';">אישור</span>
+			<div class="callout-container">
+			<p>כל האמור באתר אינו מהווה המלצה ו/או ייעוץ המתחשב בנתונים ובצרכים המיוחדים של כל אדם. כל העושה שימוש בדברים עושה זאת על דעתו בלבד ואחריותו בלבד <a href="https://docs.google.com/document/d/1KJEfNc6uakxItu__Zy9AQEhL0jOH8YeI1LYMw9g3R8g/edit?rm=minimal" target="iframe_a">בכפוף לתקנון </a><br>נא ללחוץ "אישור" להמשך גלישה באתר</br></p>
+			</div>
+		</div>		
 	</body>
 	<script>
 		function myFunction() 
