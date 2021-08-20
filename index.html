@@ -73,7 +73,7 @@ a.a:hover, a.a:active {
 		<h2 style="text-align:center; color:white; font-family:Arial, Helvetica, sans-serif"><div style="color:white; text-align: left; font-size: 14px; "><a>2021 © copyrights | כל הזכויות שמורות</a></div><a href="https://docs.google.com/document/d/1xv_lbSzLQdQyCFvJzX9D0b_Pj6NSlbb-C1B6GBqadio/edit?rm=minimal" target="iframe_a" style="color:white; text-decoration: none;">STOCK VALUE PRICE | מחיר ערך מניה </a><a href="https://accounts.google.com/signin/v2/identifier?hl=iw&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAAQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="iframe_b"><img align="right" alt="google" src="https://user-images.githubusercontent.com/72992546/100374435-f43c3e00-3014-11eb-85f3-f4f73263ef9f.PNG"></a>
 		</h2>
         
-		
+		<input type="checkbox" id="myCheck">
 		<select id="MySelectMenu">
 			<!--<option value="guide">guide</option>-->
 			<option value="user">user</option>
@@ -119,9 +119,9 @@ a.a:hover, a.a:active {
 		function myFunction() 
         {
   			var e = document.getElementById("myInput");
-  			//e.select();
+			//e.select();
 			e.options[e.selectedIndex].value;
-            var newSrc = myUrl(e.value);
+			var newSrc = myUrl(e.value);
             document.getElementById("MyFrame").src=newSrc;
 			 
 		}
@@ -137,6 +137,12 @@ a.a:hover, a.a:active {
 				url+=(MyInputCheck(selected,v,2));
 				break;
 				case "user":
+				if (document.getElementById("myCheck").checked == true)
+				{
+				url="https://forms.gle/zXsusnhr9QpWWo4h6";
+				document.getElementById("myCheck").checked = false;
+				}
+				else
 				url+=(MyInputCheck(selected,v,8));
 				break;
 				default:
@@ -155,7 +161,6 @@ a.a:hover, a.a:active {
 			return selected+v;
 		else
 			return "oops1";
-		}
-	 
+		} 
 	</script>
 </html>
