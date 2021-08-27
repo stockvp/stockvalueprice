@@ -134,7 +134,10 @@ a.a:hover, a.a:active {
 				url="https://www.youtube.com/embed/TG7HL5PsMGw?playlist=TG7HL5PsMGw&loop=1";
 				break;
 				case "magazine":
-				url+=(MyInputCheck(selected,v,2));
+				if (document.getElementById("myCheck").checked == true)
+					url+=(MyInputCheck(selected+"vip",v,2));
+				else
+					url+=(MyInputCheck(selected,v,2));
 				break;
 				case "user":
 				if (document.getElementById("myCheck").checked == true)
