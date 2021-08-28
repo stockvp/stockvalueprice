@@ -131,7 +131,10 @@ a.a:hover, a.a:active {
 			var selected = MySelect();
 			switch(selected) {
 				case "webinar":
-				url="https://www.youtube.com/embed/TG7HL5PsMGw?playlist=TG7HL5PsMGw&loop=1";
+				if (document.getElementById("myCheck").checked == true)
+					url+=selected+"vip"+v;
+				else
+					url+=selected+v;
 				break;
 				case "magazine":
 				if (document.getElementById("myCheck").checked == true)
