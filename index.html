@@ -127,7 +127,7 @@ a.a:hover, a.a:active {
 		}
         function myUrl(v) 
         {
-  			var url = atob("aHR0cHM6Ly90aW55dXJsLmNvbS9zdnA=");
+  			var url = atob("aHR0cHM6Ly9zdnB1cmwubmV0bGlmeS5hcHAv");
 			var selected = MySelect();
 			switch(selected) {
 				case "webinar":
@@ -135,9 +135,9 @@ a.a:hover, a.a:active {
 				break;
 				case "magazine":
 				if (document.getElementById("myCheck").checked == true)
-					url+=(MyInputCheck(selected+"vip",v,2));
+					url+=selected+"vip"+v;
 				else
-					url+=(MyInputCheck(selected,v,2));
+					url+=selected+v;
 				break;
 				case "user":
 				if (document.getElementById("myCheck").checked == true)
@@ -146,7 +146,7 @@ a.a:hover, a.a:active {
 				document.getElementById("myCheck").checked = false;
 				}
 				else
-				url+=(MyInputCheck(selected,v,9));
+				url+=selected+v;
 				break;
 				default:
 				url+="oops1";
@@ -158,12 +158,6 @@ a.a:hover, a.a:active {
 		var e = document.getElementById("MySelectMenu");
 		var selected = e.options[e.selectedIndex].value;
 		return selected;
-		}
-		function MyInputCheck(selected,v,max) {
-		if (v>=1 & v<=max & v.slice(v.length-1,v.length)!=".")
-			return selected+v;
-		else
-			return "oops1";
 		} 
 	</script>
 </html>
