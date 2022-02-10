@@ -5,11 +5,12 @@
 <style>
 
 body {
-  background-color: rgb(120, 120, 120); /* For browsers that do not support gradients */
-  background-image: linear-gradient(/*to bottom right, */rgb(80, 80, 80), rgb(120, 120, 120));
+  background-color: rgb(100, 100, 100); /* For browsers that do not support gradients */
+ // background-image: linear-gradient(/*to bottom right, */rgb(80, 80, 80), rgb(120, 120, 120));
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+  transition: background-color .5s;
 }
 a.a:link, a.a:visited {
   background-color: none;
@@ -30,7 +31,7 @@ a.a:hover, a.a:active {
 .callout {
   position: fixed;
   bottom: 35px;
-  left: 20px;
+  right: 20px;
   margin-left: 20px;
   max-width: 300px;
   font-family:Arial, Helvetica, sans-serif;
@@ -67,12 +68,143 @@ a.a:hover, a.a:active {
   transition-duration: 0.2s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn2 {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 50px;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: white;
+  color: black;
+}
+
+.flip-box-back {
+  color: white;
+  transform: rotateX(180deg);
+}
+
 </style>
 </head>
 	<body>
 		<h2 style="text-align:center; color:white; font-family:Arial, Helvetica, sans-serif"><div style="color:white; text-align: left; font-size: 14px; "><a>2022 © copyrights | כל הזכויות שמורות</a></div><a href="https://docs.google.com/document/d/1xv_lbSzLQdQyCFvJzX9D0b_Pj6NSlbb-C1B6GBqadio/edit?rm=minimal" target="iframe_a" style="color:white; text-decoration: none;">STOCK VALUE PRICE | מחיר ערך מניה </a><a href="https://accounts.google.com/signin/v2/identifier?hl=iw&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAAQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="iframe_b"><img align="right" alt="google" src="https://user-images.githubusercontent.com/72992546/100374435-f43c3e00-3014-11eb-85f3-f4f73263ef9f.PNG"></a>
 		</h2>
         
+		<span id="main" style="font-size:30px; cursor:pointer; color:white;padding: 10px 10px;" onclick="openNav()">&#9776; </span> 
+		
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+			<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FStockValuePrice%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+			
+			<a></a>
+			<a style="text-align:center; color:white; font-family:Arial, Helvetica, sans-serif">follow us | עקבו אחרינו</a>
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<a>YouTube</a>
+					</div>
+					<div class="flip-box-back">
+					<a target="iframe_b" style="background-color: #e60000;" href="https://www.youtube.com/channel/UCUzdwG6TY2Tikv9_spj6ndQ">יוטיוב</a>
+					</div>
+				</div>
+			</div>
+			
+			<a></a>
+			
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<a>whatsApp</a>
+					</div>
+					<div class="flip-box-back">
+					<a target="iframe_b" style="background-color: #33cc33;" href="https://wa.link/kz1bbo">וואטסאפ</a>
+					</div>
+				</div>
+			</div>
+			
+			<a></a>
+			
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<a>Telegram</a>
+					</div>
+					<div class="flip-box-back">
+					<a target="iframe_b" style="background-color: #0088cc;" href="https://t.me/stockvalueprice">טלגרם</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
 		<input type="checkbox" id="myCheck">
 		<select id="MySelectMenu">
 			<!--<option value="guide">guide</option>-->
@@ -104,8 +236,7 @@ a.a:hover, a.a:active {
 		<a href="https://docs.google.com/forms/d/e/1FAIpQLSfAGRGEOU9bIggXByuA2jklhTydkRiECGj7dKMzJfTJ9DS1oQ/viewform" target="iframe_a" class="a">contact us | צרו קשר</a>        
         <!----- Using this website is at the sole responsibility of the user . השימוש באתר באחריות המשתמש בלבד --- -->
         <p> 
-		<iframe id="MyFrame" style="position: absolute; left: 0%; width:75%; height:85%; border:none; overflow:auto;background-image: url('https://user-images.githubusercontent.com/72992546/100374681-5006c700-3015-11eb-99e0-ce36cfa12d1a.PNG')" src="https://docs.google.com/document/d/1xv_lbSzLQdQyCFvJzX9D0b_Pj6NSlbb-C1B6GBqadio/edit?rm=minimal" name="iframe_a"></iframe>
-		<iframe style="position: absolute; left: 75%; height:85%; border:none; overflow:auto;"src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FStockValuePrice%2F&tabs=timeline%2Cevents%2Cmessages&width=300px&height=635px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"></iframe>
+		<iframe id="MyFrame" style="position: absolute; left: 0%; width:100%; height:85%; border:none; overflow:auto;background-image: url('https://user-images.githubusercontent.com/72992546/100374681-5006c700-3015-11eb-99e0-ce36cfa12d1a.PNG')" src="https://docs.google.com/document/d/1xv_lbSzLQdQyCFvJzX9D0b_Pj6NSlbb-C1B6GBqadio/edit?rm=minimal" name="iframe_a"></iframe>
 		</p>
 		<div class="callout">
 			<div class="callout-header">תנאי השימוש</div>
@@ -162,5 +293,15 @@ a.a:hover, a.a:active {
 		var selected = e.options[e.selectedIndex].value;
 		return selected;
 		} 
+		function openNav() {
+  document.getElementById("mySidenav").style.width = "340px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "rgb(100, 100, 100)";
+}
 	</script>
 </html>
