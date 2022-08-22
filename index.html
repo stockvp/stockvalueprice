@@ -113,6 +113,20 @@ a.a:hover, a.a:active {
   .sidenav a {font-size: 18px;}
 }
 
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 340px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
 </style>
 </head>
 	<body>
@@ -132,6 +146,7 @@ a.a:hover, a.a:active {
 			<a class="a" target="iframe_b" href="https://www.youtube.com/channel/UCUzdwG6TY2Tikv9_spj6ndQ"><i class='fa fa-youtube-play'></i></a>
 			<a class="a" target="iframe_b" href="https://wa.link/kz1bbo"><i class='fa fa-whatsapp'></i></a>
 			<a class="a" target="iframe_b" href="https://t.me/stockvalueprice"><i class='fa fa-telegram'></i></a>
+			<a class="a" target="iframe_b" href="https://fb.com/stockvalueprice"><i class='fa fa-facebook'></i></a>
 			</div>	
 			
 		</div>
@@ -173,7 +188,8 @@ a.a:hover, a.a:active {
 			<div class="callout-container">
 			<p>כל האמור באתר אינו מהווה המלצה ו/או ייעוץ המתחשב בנתונים ובצרכים המיוחדים של כל אדם. כל העושה שימוש בדברים עושה זאת על דעתו בלבד ואחריותו בלבד <a href="https://docs.google.com/document/d/1KJEfNc6uakxItu__Zy9AQEhL0jOH8YeI1LYMw9g3R8g/edit?rm=minimal" target="iframe_a">בכפוף לתקנון </a><br>נא ללחוץ "אישור" להמשך גלישה באתר</br></p>
 			</div>
-		</div>		
+		</div>
+		<div id="overlay" onclick="closeNav()"></div>		
 	</body>
 	<script>
 		function myFunction() 
@@ -224,13 +240,22 @@ a.a:hover, a.a:active {
 		} 
 		function openNav() {
   document.getElementById("mySidenav").style.width = "340px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  //document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  overlayOn();
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
-  document.body.style.backgroundColor = "rgb(100, 100, 100)";
+  //document.body.style.backgroundColor = "rgb(100, 100, 100)";
+  overlayOff();
+}
+function overlayOn() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function overlayOff() {
+  document.getElementById("overlay").style.display = "none";
 }
 	</script>
 </html>
